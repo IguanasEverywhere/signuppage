@@ -31,7 +31,6 @@ p {
 }
 
 .call-to-action {
-    position: relative;
     padding: var(--right-side-padding);
     height: 25%;
     display: flex;
@@ -81,6 +80,10 @@ input {
     margin-bottom: 20px;
 }
 
+input:not(:focus):not(:placeholder-shown):invalid {
+    border-color: red;
+}
+
 .submit-btns {
     padding: var(--right-side-padding);
 }
@@ -101,11 +104,35 @@ input {
     cursor: pointer;
 }
 
-/* input:not(:focus):valid {
-    border-color: green;
-} */
+@media only screen and (max-width: 1000px) {
+    #main-body {
+        display: flex;
+        flex-direction: column;
+    }
 
+    #left-side {
+        width: 100vw;
+        height: 300px;
+    }
 
-input:not(:focus):not(:placeholder-shown):invalid {
-    border-color: red;
-}
+    #right-side {
+      width: 100vw;
+    }
+
+    .sign-up-section {
+        height: 500px;
+    }
+
+    .form-row {
+        display: block;
+    }
+
+    input {
+        width: 90vw;
+    }
+
+    .logo-area {
+        top: 0;
+    }
+
+  }
